@@ -15,7 +15,7 @@
                 "prompt": "Say hello to them in Russian:"
             },
             {
-                "id": "coffee",
+                "id": "one coffee please",
                 "native": "один кофе, пожалуйста",
                 "roman": "odin kofe, pozhaluysta",
                 "phonetic": "ah-DEEN KOH-fye, pah-ZHAH-loos-tah",
@@ -25,7 +25,7 @@
                 "prompt": "Order a coffee in Russian:"
             },
             {
-                "id": "thankyou",
+                "id": "thank you",
                 "native": "Спасибо",
                 "roman": "Spasibo",
                 "phonetic": "spah-SEE-bah",
@@ -52,7 +52,7 @@
                 "prompt": "Say hello to them in French:"
             },
             {
-                "id": "coffee",
+                "id": "one coffee please",
                 "native": "Un café, s'il vous plaît",
                 "roman": "un café, s'il vous plaît",
                 "phonetic": "uh(n) kah-FAY, seel voo PLEH",
@@ -62,7 +62,7 @@
                 "prompt": "Order a coffee in French:"
             },
             {
-                "id": "thankyou",
+                "id": "thank you",
                 "native": "Merci",
                 "roman": "merci",
                 "phonetic": "mehr-SEE",
@@ -89,7 +89,7 @@
                 "prompt": "Say hello to them in Japanese:"
             },
             {
-                "id": "coffee",
+                "id": "one coffee please",
                 "native": "コーヒーを一杯ください",
                 "roman": "Kōhī o ippai kudasai",
                 "phonetic": "KOH‑hee oh EEP‑pai koo‑dah‑SAI",
@@ -102,7 +102,7 @@
                 ]
             },
             {
-                "id": "thankyou",
+                "id": "thank you",
                 "native": "ありがとう",
                 "roman": "Arigatō",
                 "phonetic": "ah-ree-gah-TOH",
