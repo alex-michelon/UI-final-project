@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <h2 class="text-center mb-2">
+    Quiz Section {{ section_num }}: {{ lang.name }}
+  </h2>
+  <h3 class="text-center mb-4">
+    Question {{ question_in_section }}
+  </h3>
+
+  <div class="row align-items-start">
+    <div class="col-md-8">
+
+      <p class="lead mb-4">{{ question.context }}</p>
+
+      <p class="lead fw-semibold mb-4">{{ question.prompt }}</p>
+
+      <div id="recordControls" class="d-flex align-items-center gap-3 mb-4">
+        <button id="recordBtn" class="btn btn-danger">🔴 Click to record</button>
+        <audio id="playback" controls class="d-none"></audio>
+      </div>
+
+      <div class="mb-4">
+        <label for="typedAnswer" class="form-label">Type your answer (accessibility option)</label>
+        <input id="typedAnswer" class="form-control" placeholder="Type here…">
+      </div>
+
+      <button id="submitBtn" class="btn btn-primary" disabled>Submit</button>
+      <button id="nextBtn" class="btn btn-success d-none ms-3">Next</button>
+
+      <div id="spinner" class="spinner-border text-primary ms-3 d-none" role="status"></div>
+
+      <div id="feedback" class="mt-4"></div>
+    </div>
+
+    <div class="col-md-4 text-md-end text-center">
+      <img class="quiz-img rounded" src="{{ url_for('static', filename='media/images/' + question.image) }}" alt="">
+    </div>
+  </div>
+
+{% endblock %}

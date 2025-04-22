@@ -1,0 +1,114 @@
+[
+    {
+      "id": "ru",
+      "name": "Russian",
+      "icon": "🇷🇺",
+      "phrases": [
+        {
+          "id": "hello",
+          "native": "Привет",
+          "roman": "privet",
+          "phonetic": "pree-VYET",
+          "audio": "russian_hello.mp3",
+          "image": "rusian_hello.png",
+          "context": "You walk into a coffee shop in Russia, and someone waves to you.",
+          "prompt": "Say hello to them in Russian:"
+        },
+        {
+          "id": "coffee",
+          "native": "один кофе, пожалуйста",
+          "roman": "odin kofe, pozhaluysta",
+          "phonetic": "ah-DEEN KOH-fye, pah-ZHAH-loos-tah",
+          "audio": "russian_coffee.mp3",
+          "image": "russian_coffee.png",
+          "context": "You now go up to the counter and the barista asks for your order.",
+          "prompt": "Order a coffee in Russian:"
+        },
+        {
+          "id": "thankyou",
+          "native": "Спасибо",
+          "roman": "Spasibo",
+          "phonetic": "spah-SEE-bah",
+          "audio": "russian_thankyou.mp3",
+          "image": "russian_thankyou.png",
+          "context": "You hear your name called, and see that the barista is ready with your order!",
+          "prompt": "Thank them in Russian:"
+        }
+      ]
+    },
+    {
+      "id": "fr",
+      "name": "French",
+      "icon": "🇫🇷",
+      "phrases": [
+        {
+          "id": "hello",
+          "native": "Bonjour",
+          "roman": "bonjour",
+          "phonetic": "bohn-ZHOOR",
+          "audio": "french_hello.mp3",
+          "image": "french_hello.png",
+          "context": "You walk into a coffee shop in France, and someone waves to you.",
+          "prompt": "Say hello to them in French:"
+        },
+        {
+          "id": "coffee",
+          "native": "Un café, s'il vous plaît",
+          "roman": "un café, s'il vous plaît",
+          "phonetic": "uh(n) kah-FAY, seel voo PLEH",
+          "audio": "french_coffee.mp3",
+          "image": "french_coffee.png",
+          "context": "You now go up to the counter and the barista asks for your order.",
+          "prompt": "Order a coffee in French:"
+        },
+        {
+          "id": "thankyou",
+          "native": "Merci",
+          "roman": "merci",
+          "phonetic": "mehr-SEE",
+          "audio": "french_thankyou.mp3",
+          "image": "french_thankyou.png",
+          "context": "You hear your name called, and see that the barista is ready with your order!",
+          "prompt": "Thank them in French:"
+        }
+      ]
+    },
+    {
+      "id": "ja",
+      "name": "Japanese",
+      "icon": "🇯🇵",
+      "phrases": [
+        {
+          "id": "hello",
+          "native": "こんにちは",
+          "roman": "kon'nichiwa",
+          "phonetic": "kohn-nee-chee-wah",
+          "audio": "japanese_hello.mp3",
+          "image": "japan_hello.png",
+          "context": "You walk into a coffee shop in Japan, and someone waves to you.",
+          "prompt": "Say hello to them in Japanese:"
+        },
+        {
+          "id": "coffee",
+          "native": "コーヒーを一杯ください",
+          "roman": "Kōhī o ippai kudasai",
+          "phonetic": "KOH-hee oh EEP-pai koo-dah-SAI",
+          "audio": "japanese_coffee.mp3",
+          "image": "japanese_coffee.png",
+          "context": "You now go up to the counter and the barista asks for your order.",
+          "prompt": "Order a coffee in Japanese:"
+        },
+        {
+          "id": "thankyou",
+          "native": "ありがとう",
+          "roman": "Arigatō",
+          "phonetic": "ah-ree-gah-TOH",
+          "audio": "japanese_thankyou.mp3",
+          "image": "japanese_thankyou.png",
+          "context": "You hear your name called, and see that the barista is ready with your order!",
+          "prompt": "Thank them in Japanese:"
+        }
+      ]
+    }
+  ]
+  
