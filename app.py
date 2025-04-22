@@ -9,7 +9,8 @@ with open(os.path.join("data", "lessons.json"), encoding="utf‑8") as fp:
 
 for lang in LESSONS:
     for p in lang["phrases"]:
-        p["accept"] = [p["native"].lower(), p["roman"].lower()]
+        alts = p.get("alt", [])
+        p["accept"] = [p["native"].lower(), p["roman"].lower(), *[a.lower() for a in alts]]
 
 LANG_CODE = {"ru": "ru", "fr": "fr", "ja": "ja"}
 NUM_LANGS = len(LESSONS)
