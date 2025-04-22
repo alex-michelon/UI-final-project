@@ -2,7 +2,7 @@ from flask import Flask, render_template, session, request, redirect, url_for, j
 import json, os, requests, time, difflib
 
 app = Flask(__name__)
-app.secret_key = "dev-key-replace-in-prod"
+app.secret_key = "secret-key"
 
 with open(os.path.join("data", "lessons.json"), encoding="utf‑8") as fp:
     LESSONS = json.load(fp)
@@ -14,8 +14,8 @@ for lang in LESSONS:
 LANG_CODE = {"ru": "ru", "fr": "fr", "ja": "ja"}
 NUM_LANGS = len(LESSONS)
 PHRASES_PER = len(LESSONS[0]["phrases"])
-AKEY = os.getenv("ASSEMBLYAI_API_KEY", "")
-
+# AKEY = os.getenv("ASSEMBLYAI_API_KEY", "")
+AKEY = "3cbfea56f7024ebdbc033eb5a3d45f89"
 
 def transcribe(blob: bytes, lang: str) -> str:
     h = {"authorization": AKEY}
