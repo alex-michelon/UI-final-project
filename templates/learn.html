@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2 class="mb-3 text-center">{{ lang.icon }} {{ lang.name }} Lesson</h2>
+
+  <div class="row align-items-start">
+    <div class="col-md-8">
+      <p class="lead mb-4"><strong>Context:</strong> {{ phrase.context }}</p>
+      <p class="lead mb-4"><strong>Prompt:</strong> {{ phrase.prompt }}</p>
+
+      <div class="mb-3">
+        <strong>Native:</strong> {{ phrase.native }}<br>
+        <strong>Romanized:</strong> {{ phrase.roman }}<br>
+        <strong>Phonetic:</strong> {{ phrase.phonetic }}
+      </div>
+
+      <audio controls class="mb-3">
+        <source src="{{ url_for('static', filename='media/audio/' + phrase.audio) }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <div>
+        {% if index + 1 < total + (index // total) * total %}
+          <a href="{{ url_for('learn', idx=index + 1) }}" class="btn btn-primary">Next Phrase</a>
+        {% else %}
+          <a href="{{ url_for('quiz', q=quiz_start) }}" class="btn btn-success">Take the Quiz</a>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="col-md-4 text-center">
+      <img class="quiz-img rounded" src="{{ url_for('static', filename='media/images/' + phrase.image) }}" alt="">
+    </div>
+  </div>
+{% endblock %}
