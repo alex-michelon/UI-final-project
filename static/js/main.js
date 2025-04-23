@@ -13,6 +13,7 @@ $(function () {
     }
   
     function toggleRecord() {
+      $("#playback").addClass("d-none")
       if (!mediaRecorder || mediaRecorder.state === "inactive") {
         navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
           mediaRecorder = new MediaRecorder(stream);
@@ -23,14 +24,13 @@ $(function () {
             lastBlob = new Blob(chunks, { type: "audio/webm" });
             $("#playback").removeClass("d-none")
                           .attr("src", URL.createObjectURL(lastBlob));
-            $("#recordBtn").hide();
+            $("#recordBtn").text("🔁 Re-record?");
             updateSubmitState();
           };
           $("#recordBtn").text("◼ Stop");
         });
       } else {
         mediaRecorder.stop();
-        $("#recordBtn").prop("disabled", true);
       }
     }
   
