@@ -1,5 +1,11 @@
-body { font-family: 'Inter', sans-serif; background-color: rgb(226, 226, 210) !important; }
+body { font-family: 'Inter', sans-serif; background-color: rgb(226, 226, 210) !important; font-family: 'Nunito', sans-serif !important;}
 
 .quiz-img { max-width: 300px; height: auto; }
 
 audio { width: 100%; max-width: 400px; }
+
+.site-title {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;   
+    line-height: 1.2;
+  }
