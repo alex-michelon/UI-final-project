@@ -27,3 +27,18 @@ audio {
 .learn-text {
   font-size: 20px !important;
 }
+
+.card {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card:focus-within {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
