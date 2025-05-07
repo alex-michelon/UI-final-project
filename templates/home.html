@@ -1,16 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
   <div class="text-center">
-    <h1 class="display-5 mb-3 site-title">☕️ Welcome to Coffee Talk ☕️</h1>
-    <p class="lead">An easy way to learn the basics of languages in just 10 minutes, so you can order like a local!</p>
-    <a class="btn btn-primary btn-lg" href="{{ url_for('learn', idx=0) }}">Start Learning</a>
+    <h1 class="display-5 mb-3 site-title">☕️ Welcome&nbsp;to&nbsp;Coffee&nbsp;Talk ☕️</h1>
+    <p class="lead">An easy way to learn the basics of languages in just 10&nbsp;minutes, so you can order like a local!</p>
+    <a class="btn btn-primary btn-lg" href="{{ url_for('start', lang_id=0) }}">Start Learning</a>
   </div>
   <hr class="my-5">
   <h2 class="h4 text-center mb-4">Select a language to start learning:</h2>
   <div class="row g-4 justify-content-center">
     {% for lang in languages %}
       <div class="col-6 col-sm-4 col-lg-3">
-        <a class="text-decoration-none" href="{{ url_for('learn', idx=loop.index0 * 3) }}">
+        <a class="text-decoration-none" href="{{ url_for('start', lang_id=loop.index0) }}">
           <div class="card h-100 text-center shadow-sm">
             <div class="card-body">
               <span class="fs-1">{{ lang.icon }}</span>

@@ -17,7 +17,8 @@ for lang in LESSONS:
 LANG_CODE = {"ru": "ru", "fr": "fr", "ja": "ja"}
 NUM_LANGS = len(LESSONS)
 PHRASES_PER = len(LESSONS[0]["phrases"])
-# AKEY = os.getenv("ASSEMBLYAI_API_KEY", "")
+TOTAL_STEPS = NUM_LANGS * PHRASES_PER
+
 AKEY = "3cbfea56f7024ebdbc033eb5a3d45f89"
 
 def transcribe(blob: bytes, lang: str) -> str:
@@ -46,30 +47,36 @@ def fuzzy_ok(ans: str, options: list[str]) -> bool:
 @app.route("/")
 def home():
     session.clear()
-    return render_template("home.html", languages=LESSONS)
+    return render_template(
+        "home.html",
+        languages=LESSONS,
+        phrases_per=PHRASES_PER
+    )
 
+@app.route("/start/<int:lang_id>")
+def start(lang_id: int):
+    session["start_lang"] = lang_id
+    return redirect(url_for("learn", idx=0))
 
 @app.route("/learn/<int:idx>")
-def learn(idx):
-    phrases_per_lang = 3
-    lang_index = idx // phrases_per_lang
-    phrase_index = idx % phrases_per_lang
-    quiz_start_idx = (idx // 3) * 3
+def learn(idx: int):
+    start_lang = session.get("start_lang", 0)
 
-    if lang_index >= len(LESSONS):
-        return redirect(url_for("home"))
-
-    lang = LESSONS[lang_index]
-    if phrase_index >= len(lang["phrases"]):
+    if idx >= TOTAL_STEPS:
         return redirect(url_for("quiz", q=0))
 
+    lang_index   = (start_lang + idx // PHRASES_PER) % NUM_LANGS
+    phrase_index = idx % PHRASES_PER
+
+    lang   = LESSONS[lang_index]
     phrase = lang["phrases"][phrase_index]
 
-    timestamp = datetime.now().isoformat()
-    print(f"[LEARN PAGE] Entered at {timestamp} | lang: {lang['id']} | phrase: {phrase['id']}")
-
-    return render_template("learn.html", lang=lang, phrase=phrase, index=idx, total=len(lang["phrases"]),
-        quiz_start=quiz_start_idx
+    return render_template(
+        "learn.html",
+        lang=lang,
+        phrase=phrase,
+        index=idx,
+        total_steps=TOTAL_STEPS,
     )
 
 @app.route("/quiz/<int:q>")
@@ -117,4 +124,4 @@ def quiz_result():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5001, debug=True)
